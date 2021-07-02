@@ -27,6 +27,7 @@ namespace RatingAdjustment.Services
         /**
          * Calculate "Q" given the formula in the problem statement
          */
+
         void SetQ(double number_of_ratings)
         {
             _q = Math.Round(Z * Math.Sqrt((Math.Round((_percent_positive * (1 - _percent_positive)) + ((Z * Z) / (4 * number_of_ratings)), 6) / number_of_ratings)), 6);
