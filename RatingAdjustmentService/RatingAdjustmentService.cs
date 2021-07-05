@@ -27,10 +27,9 @@ namespace RatingAdjustment.Services
         /**
          * Calculate "Q" given the formula in the problem statement
          */
-
         void SetQ(double number_of_ratings)
         {
-            _q = Math.Round(Z * Math.Sqrt((Math.Round((_percent_positive * (1 - _percent_positive)) + ((Z * Z) / (4 * number_of_ratings)), 6) / number_of_ratings)), 6);
+            _q = Math.Round(Z* Math.Sqrt((Math.Round((_percent_positive * (1 - _percent_positive)) + ((Z * Z) / (4 * number_of_ratings)), 6) / number_of_ratings)), 6);
         }
 
         /** Adjusted lower bound
@@ -43,7 +42,7 @@ namespace RatingAdjustment.Services
         {
             SetPercentPositive(stars);
             SetQ(number_of_ratings);
-            return MAX_STARS * Math.Round((_percent_positive + (((Z * Z) / (2 * number_of_ratings)) - _q)) / (1 + ((Z* Z) / number_of_ratings)),6);  
+            return MAX_STARS * Math.Round((_percent_positive + (((Z * Z) / (2 * number_of_ratings)) - _q)) / (1 + ((Z * Z) / number_of_ratings)),6);  
         }
     }
     }
